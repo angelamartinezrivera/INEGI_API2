@@ -325,6 +325,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 Por último, para correr la apli, debes regresar a CMD y ejecutar `flask --app api_v1 run`, esto correrá la app desde el navegador:
+
 ![image.png](https://raw.githubusercontent.com/bucketio/img7/main/2026/05/03/1777859938728-ac4527b5-b144-4ad1-a4c3-ce01354fe810.png 'image.png')
 
 Si quieres interactuar con los diferentes KPI's programados, debes agregar parámetro al la ruta, tal y como lo muestra el siguiente menú de rutas:
