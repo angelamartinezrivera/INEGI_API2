@@ -1,19 +1,23 @@
 # Práctica Integradora (Examen): Arquitectura Cloud para BI
-**Objetivo** : Migrar un conjunto de datos local (Excel normalizado INEGI) a una arquitectura en la nube, exponiendo la información a través de una API RESTful y consumiéndola en una herramienta de Business Intelligence para la toma de decisiones.
-Herramientas a utilizar:
-- **Base de Datos:** supabase (PostgreSQL).
-- **Backend/API**: Python (Flask o FastAPI).
-- **Hosting:** PythonAnyWhere.
-- **Visualización (BI)**: tableau, Power BI o Looker Studio.
-- **Validar API:** postman
+
+**Herramientas a utilizar:**
+- **Base de Datos:** Supabase (PostgreSQL).
+- **Backend/API:** Python (Flask o FastAPI).
+- **Hosting:** PythonAnywhere.
+- **Visualización (BI):** Tableau, Power BI o Looker Studio.
+- **Validación de API:** Postman.
 
 # Paso #1: Migración a la Nube (Supabase)
 
-Primero a importar nuestro excel convertido a CSV desde la interfaz de la pagina Supabase, se contendrá todo el archivo en una sola tabla, es la que usaremos de base. Es importante que importemos nuestra hoja con registros limpiados y solo con las columnas que necesitaremos para el diseño de la base de datos, esto para facilitar los propios comandos de SQL.
-Partiremos desde este borrador del diseño de Base de datos:
+En primer lugar, se procede a importar el archivo de Excel previamente convertido a formato CSV mediante la interfaz de Supabase. Todo el contenido se almacenará inicialmente en una sola tabla base, la cual servirá como punto de partida para el diseño de la base de datos.
+
+Es fundamental que el archivo importado contenga únicamente registros depurados y las columnas necesarias para el modelo de datos, con el fin de simplificar la ejecución de consultas SQL y optimizar el proceso de normalización.
+
+Se parte del siguiente diseño preliminar de la base de datos:
+
 ![image.png](https://raw.githubusercontent.com/bucketio/img9/main/2026/05/03/1777851309000-e9a6caec-6096-4fb2-a02b-36a2ed87e590.png 'image.png')
 
-Respetaremos estra estructura y para ahorrar tiempo usaremos el "SQL Editor" dentro de la propia interfaz de Supabase para no perder tiempo, por este canal estableceremos las llaves foráneas y primarias, corriendo las siguientes consultas:
+Se respeta esta estructura y, para optimizar el tiempo de desarrollo, se utiliza el **SQL Editor** integrado en Supabase. A través de este, se definen las llaves primarias y foráneas ejecutando las siguientes sentencias:
 
 #### Estructura de las Tablas (DB)
 Diccionario de Código de Actividad:
@@ -78,11 +82,11 @@ SELECT
     id  -- ID de contacto
 FROM denue_inegi;
 ```
-Finalmente las tablas creadas deberían verse reflejadas en el entorno de Supabase, como a continuación:
-![image.png](https://raw.githubusercontent.com/bucketio/img18/main/2026/05/03/1777853408132-fd905b73-2711-41a5-bc9d-8645efdd9c14.png 'image.png')
+Finalmente, las tablas creadas deberán visualizarse correctamente dentro del entorno de Supabase, como se muestra a continuación:
+<img width="960" height="438" alt="Captura de pantalla 2026-05-04 102650" src="https://github.com/user-attachments/assets/b974be5c-268b-42f0-9f81-3514d2c9bd71" />
 
 ####  Llenado de Tablas Maestras (desde el CSV)
-Para ello se ejecutó los siguientes códigos:
+Para completar la carga de información, se ejecutaron los siguientes códigos:
 
 ## Inserción en Diccionarios
 
@@ -202,8 +206,7 @@ FROM denue_inegi;
 ```
 
 # Paso 2: Desarrollo de la API RESTful (Python)
-## 
-A través de librerías como Flask accederemos a nuestra base de datos y haremos programaremos determinadas consultas a manera de KPI's, todo esto desde un entorno virtual contenido en tu maquina local, para ello, deberás seguir las siguientes instrucciones:
+Mediante el uso de librerías como Flask, se establece la conexión con la base de datos para programar diversas consultas tipo KPI. Todo este proceso se realiza dentro de un entorno virtual en la máquina local, siguiendo las instrucciones que se detallan a continuación:
 
 Primero: 
 - Asegurate de tener Python instalado.
@@ -212,17 +215,17 @@ Primero:
 - Ahora te encargas de instalar las librerías necesarias `pip install supabase` y además el programa **Flask**.
 
 Segundo:
-- Ahora nos encargamos de llenar el contenido de la carpeta, tiene que quedar con esos 2 archivos:
-![image.png](https://raw.githubusercontent.com/bucketio/img17/main/2026/05/03/1777858845062-f836958b-a700-496f-afed-997a9a9f633a.png 'image.png')
-- El archivo ".env" escribiremos el link de nuestro proyecto Supabase y su llave de apli
+- Configurar la estructura del proyecto con los archivos requeridos:
+<img width="192" height="177" alt="image" src="https://github.com/user-attachments/assets/a57725a0-1660-44b3-8ac8-0e639bc81b4d" />
+- En el archivo ".env" pondremos el link del proyecto de Supabase y su llave (KEY)
 
 ```python
 SUPABASE_URL=https://xyz.supabase.co
 SUPABASE_KEY=tu_llave_aqui
 ```
-![image.png](https://raw.githubusercontent.com/bucketio/img15/main/2026/05/03/1777858943703-f464eabe-4cb9-401d-8efb-876ed58ee169.png 'image.png')
+<img width="960" height="437" alt="image" src="https://github.com/user-attachments/assets/fd9cf7f2-71a2-47e2-8dd7-21c7b3f35dfc" />
 
-- Después programaremos nuestro archivo main.py (que en nuestro ejemplo se llama "api_v1"), que contendrá las siguientes consultas predefinidas:
+- Después programaremos el archivo principal ("api_v1"), que contendrá las siguientes consultas predefinidas:
 
 ```python
 import os
@@ -324,11 +327,14 @@ def get_cercanas():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
-Por último, para correr la apli, debes regresar a CMD y ejecutar `flask --app api_v1 run`, esto correrá la app desde el navegador:
 
-![image.png](https://raw.githubusercontent.com/bucketio/img7/main/2026/05/03/1777859938728-ac4527b5-b144-4ad1-a4c3-ce01354fe810.png 'image.png')
+Para ejecutar la aplicación, se debe utilizar el siguiente comando en el CMD `flask --app api_v1 run`, esto permitirá visualizar la aplicación en el navegador:
 
-Si quieres interactuar con los diferentes KPI's programados, debes agregar parámetro al la ruta, tal y como lo muestra el siguiente menú de rutas:
+<img width="653" height="76" alt="image" src="https://github.com/user-attachments/assets/f874f2d6-93fe-4804-bca4-1c3bc8a2aebf" />
+
+<img width="112" height="32" alt="image" src="https://github.com/user-attachments/assets/4b2801b7-6eb4-4f60-a0e9-511951a39fbc" />
+
+Si se desea interactuar con los distintos KPI programados, es necesario agregar los parámetros correspondientes en la ruta, tal como se presenta en el siguiente listado de endpoints:
 
 ### **1. Catálogo General de Unidades**
 - **Ruta**: GET /api/unidades
@@ -373,7 +379,12 @@ Si quieres interactuar con los diferentes KPI's programados, debes agregar pará
 **Retorno**: Lista de negocios con sus coordenadas que cumplen la condición de distancia.
 
 Si siguió todos los pasos al interactuar con la api, el entorno debería verse así.
-![image.png](https://raw.githubusercontent.com/bucketio/img15/main/2026/05/03/1777860705236-f77b4a2d-8c5c-4583-ab0a-2e0c8a456e7b.png 'image.png')
+
+<img width="960" height="498" alt="image" src="https://github.com/user-attachments/assets/003c4a5e-6dd0-4d2f-bfa9-b07787f54e44" />
+
+También tiene la opción de visualizarlo en *Impresión en formato estilístico*:
+
+<img width="963" height="504" alt="image" src="https://github.com/user-attachments/assets/f45d8879-69e7-4d57-a2a1-dbb223467cb0" />
 
 # Paso 3: Despliegue en la Nube (PythonAnywhere)
 ## 
