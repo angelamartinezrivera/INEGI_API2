@@ -383,11 +383,9 @@ Si se desea interactuar con los distintos KPI programados, es necesario agregar 
 **Retorno**: Lista de negocios con sus coordenadas que cumplen la condición de distancia.
 
 Si siguió todos los pasos al interactuar con la api, el entorno debería verse así.
-
 <img width="960" height="498" alt="image" src="https://github.com/user-attachments/assets/003c4a5e-6dd0-4d2f-bfa9-b07787f54e44" />
 
-También tiene la opción de visualizarlo en *Impresión en formato estilístico*:
-
+También tiene la opción de visualizarlo en **Impresión en formato estilístico**:
 <img width="963" height="504" alt="image" src="https://github.com/user-attachments/assets/f45d8879-69e7-4d57-a2a1-dbb223467cb0" />
 
 # Paso 3: Despliegue en la Nube (PythonAnywhere)
