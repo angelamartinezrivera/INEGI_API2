@@ -14,7 +14,6 @@ En primer lugar, se procede a importar el archivo de Excel previamente convertid
 Es fundamental que el archivo importado contenga únicamente registros depurados y las columnas necesarias para el modelo de datos, con el fin de simplificar la ejecución de consultas SQL y optimizar el proceso de normalización.
 
 Se parte del siguiente diseño preliminar de la base de datos:
-
 ![image.png](https://raw.githubusercontent.com/bucketio/img9/main/2026/05/03/1777851309000-e9a6caec-6096-4fb2-a02b-36a2ed87e590.png 'image.png')
 
 Se respeta esta estructura y, para optimizar el tiempo de desarrollo, se utiliza el **SQL Editor** integrado en Supabase. A través de este, se definen las llaves primarias y foráneas ejecutando las siguientes sentencias:
@@ -83,7 +82,6 @@ SELECT
 FROM denue_inegi;
 ```
 Finalmente, las tablas creadas deberán visualizarse correctamente dentro del entorno de Supabase, como se muestra a continuación:
-
 <img width="960" height="438" alt="Captura de pantalla 2026-05-04 102650" src="https://github.com/user-attachments/assets/b974be5c-268b-42f0-9f81-3514d2c9bd71" />
 
 ####  Llenado de Tablas Maestras (desde el CSV)
@@ -217,7 +215,7 @@ Primero:
 
 Segundo:
 - Configurar la estructura del proyecto con los archivos requeridos:
-  
+
 <img width="192" height="177" alt="image" src="https://github.com/user-attachments/assets/a57725a0-1660-44b3-8ac8-0e639bc81b4d" />
 
 - En el archivo ".env" pondremos el link del proyecto de Supabase y su llave (KEY)
@@ -333,7 +331,6 @@ if __name__ == '__main__':
 ```
 
 Para ejecutar la aplicación, se debe utilizar el siguiente comando en el CMD `flask --app api_v1 run`, esto permitirá visualizar la aplicación en el navegador:
-
 <img width="800" height="90" alt="image" src="https://github.com/user-attachments/assets/f874f2d6-93fe-4804-bca4-1c3bc8a2aebf" />
 
 <img width="300" height="50" alt="image" src="https://github.com/user-attachments/assets/4b2801b7-6eb4-4f60-a0e9-511951a39fbc" />
