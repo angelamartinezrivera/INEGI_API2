@@ -218,8 +218,6 @@ Primero:
 Segundo:
 - Configurar la estructura del proyecto con los archivos requeridos:
   
-<img width="192" height="177" alt="image" src="https://github.com/user-attachments/assets/a57725a0-1660-44b3-8ac8-0e639bc81b4d" />
-
 ![image.png](https://github.com/user-attachments/assets/a57725a0-1660-44b3-8ac8-0e639bc81b4d 'image.png')
 
 - En el archivo ".env" pondremos el link del proyecto de Supabase y su llave (KEY)
@@ -229,7 +227,7 @@ SUPABASE_URL=https://xyz.supabase.co
 SUPABASE_KEY=tu_llave_aqui
 ```
 
-<img width="960" height="437" alt="image" src="https://github.com/user-attachments/assets/fd9cf7f2-71a2-47e2-8dd7-21c7b3f35dfc" />
+![image.png](https://github.com/user-attachments/assets/fd9cf7f2-71a2-47e2-8dd7-21c7b3f35dfc 'image.png')
 
 - Después programaremos el archivo principal ("api_v1"), que contendrá las siguientes consultas predefinidas:
 
@@ -336,9 +334,9 @@ if __name__ == '__main__':
 
 Para ejecutar la aplicación, se debe utilizar el siguiente comando en el CMD `flask --app api_v1 run`, esto permitirá visualizar la aplicación en el navegador:
 
-<img width="800" height="90" alt="image" src="https://github.com/user-attachments/assets/f874f2d6-93fe-4804-bca4-1c3bc8a2aebf" />
+![image.png](https://github.com/user-attachments/assets/f874f2d6-93fe-4804-bca4-1c3bc8a2aebf 'image.png')
 
-<img width="300" height="50" alt="image" src="https://github.com/user-attachments/assets/4b2801b7-6eb4-4f60-a0e9-511951a39fbc" />
+![image.png](https://github.com/user-attachments/assets/4b2801b7-6eb4-4f60-a0e9-511951a39fbc 'image.png')
 
 Si se desea interactuar con los distintos KPI programados, es necesario agregar los parámetros correspondientes en la ruta, tal como se presenta en el siguiente listado de endpoints:
 
@@ -386,10 +384,11 @@ Si se desea interactuar con los distintos KPI programados, es necesario agregar 
 
 Si siguió todos los pasos al interactuar con la api, el entorno debería verse así.
 
-<img width="960" height="498" alt="image" src="https://github.com/user-attachments/assets/003c4a5e-6dd0-4d2f-bfa9-b07787f54e44" />
+![image.png](https://github.com/user-attachments/assets/003c4a5e-6dd0-4d2f-bfa9-b07787f54e44 'image.png')
 
 También tiene la opción de visualizarlo en **Impresión en formato estilístico**:
-<img width="963" height="504" alt="image" src="https://github.com/user-attachments/assets/f45d8879-69e7-4d57-a2a1-dbb223467cb0" />
+
+![image.png](https://github.com/user-attachments/assets/f45d8879-69e7-4d57-a2a1-dbb223467cb0 'image.png')
 
 # Paso 3: Despliegue en la Nube (PythonAnywhere)
 ## 
