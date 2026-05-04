@@ -334,9 +334,9 @@ if __name__ == '__main__':
 
 Para ejecutar la aplicación, se debe utilizar el siguiente comando en el CMD `flask --app api_v1 run`, esto permitirá visualizar la aplicación en el navegador:
 
-<img width="653" height="76" alt="image" src="https://github.com/user-attachments/assets/f874f2d6-93fe-4804-bca4-1c3bc8a2aebf" />
+<img width="800" height="90" alt="image" src="https://github.com/user-attachments/assets/f874f2d6-93fe-4804-bca4-1c3bc8a2aebf" />
 
-<img width="112" height="32" alt="image" src="https://github.com/user-attachments/assets/4b2801b7-6eb4-4f60-a0e9-511951a39fbc" />
+<img width="300" height="50" alt="image" src="https://github.com/user-attachments/assets/4b2801b7-6eb4-4f60-a0e9-511951a39fbc" />
 
 Si se desea interactuar con los distintos KPI programados, es necesario agregar los parámetros correspondientes en la ruta, tal como se presenta en el siguiente listado de endpoints:
 
