@@ -86,6 +86,8 @@ Finalmente, las tablas creadas deberán visualizarse correctamente dentro del en
 
 <img width="960" height="438" alt="Captura de pantalla 2026-05-04 102650" src="https://github.com/user-attachments/assets/b974be5c-268b-42f0-9f81-3514d2c9bd71" />
 
+![image.png](https://github.com/user-attachments/assets/b974be5c-268b-42f0-9f81-3514d2c9bd71 'image.png')
+
 ####  Llenado de Tablas Maestras (desde el CSV)
 Para completar la carga de información, se ejecutaron los siguientes códigos:
 
