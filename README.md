@@ -210,6 +210,7 @@ Primero:
 - Creas una nueva carpeta y accedes a esta desde el CMD de Windows.
 - Creas un entorno virtual con: `python -m venv nombre_entorno` y ahí mismo lo activas con `nombre_entorno\Scripts\activate`.
 - Ahora te encargas de instalar las librerías necesarias `pip install supabase` y además el programa **Flask**.
+
 Segundo:
 - Ahora nos encargamos de llenar el contenido de la carpeta, tiene que quedar con esos 2 archivos:
 ![image.png](https://raw.githubusercontent.com/bucketio/img17/main/2026/05/03/1777858845062-f836958b-a700-496f-afed-997a9a9f633a.png 'image.png')
@@ -325,6 +326,7 @@ if __name__ == '__main__':
 ```
 Por último, para correr la apli, debes regresar a CMD y ejecutar `flask --app api_v1 run`, esto correrá la app desde el navegador:
 ![image.png](https://raw.githubusercontent.com/bucketio/img7/main/2026/05/03/1777859938728-ac4527b5-b144-4ad1-a4c3-ce01354fe810.png 'image.png')
+
 Si quieres interactuar con los diferentes KPI's programados, debes agregar parámetro al la ruta, tal y como lo muestra el siguiente menú de rutas:
 
 ### **1. Catálogo General de Unidades**
