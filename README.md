@@ -215,7 +215,6 @@ Primero:
 
 Segundo:
 - Configurar la estructura del proyecto con los archivos requeridos:
-
 <img width="192" height="177" alt="image" src="https://github.com/user-attachments/assets/a57725a0-1660-44b3-8ac8-0e639bc81b4d" />
 
 - En el archivo ".env" pondremos el link del proyecto de Supabase y su llave (KEY)
