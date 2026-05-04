@@ -209,7 +209,7 @@ Primero:
 - Asegurate de tener Python instalado.
 - Creas una nueva carpeta y accedes a esta desde el CMD de Windows.
 - Creas un entorno virtual con: `python -m venv nombre_entorno` y ahí mismo lo activas con `nombre_entorno\Scripts\activate`.
-- Ahora te encargas de instalar las librerías necesarias `pip instal supabase` y además el programa **Flask**.
+- Ahora te encargas de instalar las librerías necesarias `pip install supabase` y además el programa **Flask**.
 Segundo:
 - Ahora nos encargamos de llenar el contenido de la carpeta, tiene que quedar con esos 2 archivos:
 ![image.png](https://raw.githubusercontent.com/bucketio/img17/main/2026/05/03/1777858845062-f836958b-a700-496f-afed-997a9a9f633a.png 'image.png')
