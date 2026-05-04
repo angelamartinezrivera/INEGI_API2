@@ -83,6 +83,7 @@ SELECT
 FROM denue_inegi;
 ```
 Finalmente, las tablas creadas deberán visualizarse correctamente dentro del entorno de Supabase, como se muestra a continuación:
+
 <img width="960" height="438" alt="Captura de pantalla 2026-05-04 102650" src="https://github.com/user-attachments/assets/b974be5c-268b-42f0-9f81-3514d2c9bd71" />
 
 ####  Llenado de Tablas Maestras (desde el CSV)
@@ -216,13 +217,16 @@ Primero:
 
 Segundo:
 - Configurar la estructura del proyecto con los archivos requeridos:
+  
 <img width="192" height="177" alt="image" src="https://github.com/user-attachments/assets/a57725a0-1660-44b3-8ac8-0e639bc81b4d" />
+
 - En el archivo ".env" pondremos el link del proyecto de Supabase y su llave (KEY)
 
 ```python
 SUPABASE_URL=https://xyz.supabase.co
 SUPABASE_KEY=tu_llave_aqui
 ```
+
 <img width="960" height="437" alt="image" src="https://github.com/user-attachments/assets/fd9cf7f2-71a2-47e2-8dd7-21c7b3f35dfc" />
 
 - Después programaremos el archivo principal ("api_v1"), que contendrá las siguientes consultas predefinidas:
