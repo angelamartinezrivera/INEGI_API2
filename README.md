@@ -549,3 +549,4 @@ Esta opción es la mejor porque usa tu código de PythonAnywhere como fuente.
 Busca en la esquina inferior derecha un botón verde que dice **Crear un informe**. Al darle clic, Power BI te llevará al lienzo en blanco.
 
 ## Resultado:
+![image.png](https://github.com/user-attachments/assets/30d0e6ed-be62-402d-8413-bca00570e111 'image.png')
