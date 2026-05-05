@@ -205,8 +205,7 @@ FROM denue_inegi;
 Mediante el uso de librerías como Flask, se establece la conexión con la base de datos para programar diversas consultas tipo KPI. Todo este proceso se realiza dentro de un entorno virtual en la máquina local, siguiendo las instrucciones que se detallan a continuación:
 
 Primero: 
-- Asegurate de tener Python instalado.
-**Nota:** Para ésta practica recomendamos trabajar con **python 3.10**, puesto que es la versión que se utilizó para ejecutar localmente y también fue la versión que se configuró en **Python AnyWhere** con esa misma versión (para evitar incompatibilidades).
+- Asegurate de tener Python instalado. (**Nota:** Para esta practica recomendamos trabajar con **python 3.10**, puesto que es la versión que se utilizó para ejecutar localmente y también fue la versión que se configuró en **Python AnyWhere** con esa misma versión para evitar incompatibilidades).
 - Creas una nueva carpeta y accedes a esta desde el CMD de Windows.
 - Creas un entorno virtual con: `python -m venv nombre_entorno` y ahí mismo lo activas con `nombre_entorno\Scripts\activate`.
 - Ahora te encargas de instalar las librerías necesarias `pip install supabase` y además el programa **Flask**.
