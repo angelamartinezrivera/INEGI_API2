@@ -416,7 +416,7 @@ pip install flask supabase python-dotenv "httpx<0.28.0" "websockets>=13.0,<16.0"
 ```
 ![image.png](https://github.com/user-attachments/assets/996056e2-1512-4a55-b3b0-f5f7b0c683b1 'image.png')
 
-## 3. Configurar la "Web App"
+## 3. Configurar la Web App
 
 1. Ve a la pestaña **Web** en el menú superior.
 2. Haz clic en **Add a new web app**.
@@ -436,7 +436,7 @@ En la misma pestaña Web, baja hasta la sección **Virtualenv**:
 
 ![image.png](https://github.com/user-attachments/assets/9081b841-0248-4ec9-85ff-37ec86b934a5 'image.png')
 
-## 5. Configurar el archivo WSGI (El paso más crítico)
+## 5. Configurar el archivo WSGI
 
 Flask necesita un "traductor" para hablar con el servidor de PythonAnywhere. Ese es el archivo WSGI.
 
@@ -520,7 +520,7 @@ Para probar su funcionamiento, ejecute el código utilizando el menú de Endpoin
 *Cálculo/Consulta*: Cálculo de distancia euclidiana o Bounding Box sobre las columnas latitud y longitud de la tabla ubicacion.
 *Retorno*: Lista de negocios con sus coordenadas que cumplen la condición de distancia.
 
-# Resultado:
+## Resultado:
 
 ![image.png](https://github.com/user-attachments/assets/8a2064d9-ecb6-41e9-b4ea-9416a4d19c34 'image.png')
 
@@ -546,5 +546,5 @@ Esta opción es la mejor porque usa tu código de PythonAnywhere como fuente.
 
 Busca en la esquina inferior derecha un botón verde que dice **Crear un informe**. Al darle clic, Power BI te llevará al lienzo en blanco.
 
-# Resultado:
+## Resultado:
 
