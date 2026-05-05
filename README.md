@@ -526,7 +526,7 @@ Para probar su funcionamiento, ejecute el código utilizando el menú de Endpoin
 
 # Paso 4: Visualización y Dashboarding (BI)
 
-# 1. Para ello, se usó la Opción A: Power BI (Conectando a tu API)
+## 1. Para ello, se usó la Opción A: Power BI
 
 Esta opción es la mejor porque usa tu código de PythonAnywhere como fuente.
 
