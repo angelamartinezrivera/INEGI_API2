@@ -536,9 +536,9 @@ Esta opción es la mejor porque usa tu código de PythonAnywhere como fuente.
 - Selecciona la opción API Web.
 - Pega tu URL de PythonAnywhere.
 
-![image.png](https://github.com/user-attachments/assets/a714801c-5d69-4e17-9fd4-e7e1f455ae1e 'image.png')
-
 ![image.png](https://github.com/user-attachments/assets/263dbea3-199c-438f-8974-684358d9f16f 'image.png')
+
+![image.png](https://github.com/user-attachments/assets/a714801c-5d69-4e17-9fd4-e7e1f455ae1e 'image.png')
 
 ![image.png](https://github.com/user-attachments/assets/e7eb4327-2039-436c-a294-313788cab160 'image.png')
 
