@@ -206,6 +206,7 @@ Mediante el uso de librerías como Flask, se establece la conexión con la base 
 
 Primero: 
 - Asegurate de tener Python instalado.
+**Nota:** Para ésta practica recomendamos trabajar con **python 3.10**, puesto que es la versión que se utilizó para ejecutar localmente y también fue la versión que se configuró en **Python AnyWhere** con esa misma versión (para evitar incompatibilidades).
 - Creas una nueva carpeta y accedes a esta desde el CMD de Windows.
 - Creas un entorno virtual con: `python -m venv nombre_entorno` y ahí mismo lo activas con `nombre_entorno\Scripts\activate`.
 - Ahora te encargas de instalar las librerías necesarias `pip install supabase` y además el programa **Flask**.
@@ -542,4 +543,8 @@ Esta opción es la mejor porque usa tu código de PythonAnywhere como fuente.
 Busca en la esquina inferior derecha un botón verde que dice **Crear un informe**. Al darle clic, Power BI te llevará al lienzo en blanco. Después, empiezas a diseñar tu dashboard dependiendo del objetivo de lo que quieras mostrar.
 
 ## Resultado:
-![image.png](https://github.com/user-attachments/assets/30d0e6ed-be62-402d-8413-bca00570e111 'image.png')
+
+![image.png](https://github.com/user-attachments/assets/7bc7af58-4637-410d-917e-8e98d650f770 'image.png')
+
+# 3. Diagrama de Arquitectura
+![image.png](https://github.com/user-attachments/assets/8af33afd-e003-4aad-8922-3c30b53b547e 'image.png')
