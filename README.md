@@ -391,7 +391,160 @@ También tiene la opción de visualizarlo en **Impresión en formato estilístic
 ![image.png](https://github.com/user-attachments/assets/f45d8879-69e7-4d57-a2a1-dbb223467cb0 'image.png')
 
 # Paso 3: Despliegue en la Nube (PythonAnywhere)
-## 
+
+## 1. Subida de Archivos
+
+Sube los siguientes archivos a tu entorno en PythonAnywhere:
+
+- `api_v1.py`
+- `.env` (opcional, si utilizas variables de entorno)
+
+![image.png](https://github.com/user-attachments/assets/1a8d6c94-3318-4563-aac4-753261650246 'image.png')
+
+## 2. Crear el Entorno Virtual en la Nube
+
+1. Ve a la pestaña **Consoles**.
+2. Abre una consola de tipo **Bash**.
+
+![image.png](https://github.com/user-attachments/assets/62ac40c4-3364-4fba-9f80-fc6ea9a380f9 'image.png')
+
+4. Ejecuta los siguientes comandos:
+
+```bash
+mkvirtualenv --python=python3.10 mi-entorno-api
+pip install flask supabase python-dotenv "httpx<0.28.0" "websockets>=13.0,<16.0"
+```
+![image.png](https://github.com/user-attachments/assets/996056e2-1512-4a55-b3b0-f5f7b0c683b1 'image.png')
+
+## 3. Configurar la "Web App"
+
+1. Ve a la pestaña **Web** en el menú superior.
+2. Haz clic en **Add a new web app**.
+3. Dale a **Next**, luego elige **Manual Configuration** (No elijas Flask directamente aquí).
+4. Elige la versión de Python que usaste (ej. Python 3.10).
+
+Al hacerlo, debe de salir así:
+
+![image.png](https://github.com/user-attachments/assets/597d3185-00ea-4226-9d4d-5c7f1a425d86 'image.png')
+
+## 4. Vincular el Entorno Virtual
+
+En la misma pestaña Web, baja hasta la sección **Virtualenv**:
+
+1. Haz clic donde dice **Enter path to a virtualenv**.
+2. Escribe solo el nombre que le pusiste: **mi-entorno-api**.
+
+![image.png](https://github.com/user-attachments/assets/9081b841-0248-4ec9-85ff-37ec86b934a5 'image.png')
+
+## 5. Configurar el archivo WSGI (El paso más crítico)
+
+Flask necesita un "traductor" para hablar con el servidor de PythonAnywhere. Ese es el archivo WSGI.
+
+1. En la pestaña Web, busca el enlace que dice WSGI configuration file y haz clic en él.
+2. Borra todo lo que tenga ese archivo y pega exactamente esto:
+
+```python
+import sys
+import os
+
+# Ruta al directorio donde está tu archivo api_v1.py
+path = '/home/AngelaMartinezRivera'
+if path not in sys.path:
+    sys.path.append(path)
+
+# Cargamos las variables de entorno manualmente por si acaso
+from dotenv import load_dotenv
+load_dotenv(os.path.join(path, '.env'))
+
+# Importamos la variable 'app' de tu archivo api_v1.py
+from api_v1 import app as application
+```
+
+![image.png](https://github.com/user-attachments/assets/f46e121e-40eb-49b3-b010-60ce3d8ee76e 'image.png')
+
+## 6. Publicar la API
+
+1. Regresa a la pestaña Web.
+2. Haz clic en el botón grande y verde que dice **Reload tu_usuario.pythonanywhere.com**.
+3. Tu API ahora es pública.
+
+Al hacerlo, debe de aparecer lo siguiente:
+
+![image.png](https://github.com/user-attachments/assets/51255b7b-7de5-4531-aecf-e1960718ac06 'image.png')
+
+## 7. Prueba de Funcionamiento
+
+**URL pública funcional:** https://AngelaMartinezRivera.pythonanywhere.com/api/unidades 
+
+Para probar su funcionamiento, ejecute el código utilizando el menú de Endpoints disponibles:
+
+### *1. Catálogo General de Unidades*
+- *Ruta*: GET /api/unidades
+*Descripción*: Obtiene un listado simplificado de los negocios para una vista rápida.
+*Cálculo/Consulta*: SELECT id, nombre_establecimiento, razon_social FROM negocio LIMIT 50.
+*Retorno*: Un array de objetos con los 3 campos básicos.
+
+### *2. Consulta de Detalle por ID*
+- *Ruta*: GET /api/unidades/<id>
+*Descripción*: Recupera toda la información almacenada en la tabla maestra negocio para un registro específico.
+*Cálculo/Consulta*: Filtro directo por Primary Key (WHERE id = {id}).
+*Retorno*: Un objeto con todos los campos de la tabla negocio.
+
+### *3. Buscador por Nombre (Coincidencia Parcial)*
+- *Ruta*: GET /api/unidades/buscar?nombre={texto}
+*Descripción*: Busca establecimientos cuyo nombre contenga la cadena de texto proporcionada (sin importar mayúsculas/minúsculas).
+*Cálculo/Consulta*: Operador ilike en SQL (WHERE nombre_establecimiento ILIKE '%{texto}%').
+*Retorno*: Lista de negocios que coinciden con la búsqueda.
+
+### *4. KPI: Unidades por Entidad Federativa*
+- *Ruta*: GET /api/estadisticas/total_por_estado
+*Descripción*: Resumen estadístico que contabiliza cuántos negocios hay en cada estado.
+*Cálculo/Consulta: Agrupación y conteo (SELECT entidad, COUNT() FROM ubicacion GROUP BY entidad).
+*Retorno*: Un objeto donde las llaves son los nombres de los estados y los valores son el total de registros.
+
+### *5. Filtro Dinámico Combinado*
+- *Ruta*: GET /api/unidades/filtro?estado={X}&actividad={Y}
+*Descripción*: Permite filtrar negocios por su ubicación geográfica (estado) y/o su tipo de actividad económica.
+*Cálculo/Consulta*: JOIN entre negocio y ubicacion con condiciones opcionales AND según los parámetros enviados.
+*Retorno*: Lista filtrada de unidades económicas.
+
+### *6. Perfil Completo (Información Anidada)*
+- *Ruta*: GET /api/unidades/<id>/perfil_completo
+*Descripción*: La ruta más completa. Reconstruye el modelo relacional para mostrar el negocio con sus detalles de contacto y ubicación en un solo lugar.
+*Cálculo/Consulta*: Múltiples JOINs (negocio + ubicacion + contacto + diccionarios).
+*Retorno*: Un JSON jerárquico con sub-objetos ubicacion, contacto y actividad.
+
+### *7. Búsqueda por Proximidad (Geolocalización)*
+- *Ruta*: GET /api/unidades/cercanas?lat={X}&lon={Y}&radio={Z}
+*Descripción*: Encuentra negocios dentro de un radio de acción circular (en kilómetros) a partir de un punto GPS.
+*Cálculo/Consulta*: Cálculo de distancia euclidiana o Bounding Box sobre las columnas latitud y longitud de la tabla ubicacion.
+*Retorno*: Lista de negocios con sus coordenadas que cumplen la condición de distancia.
+
+# Resultado:
+
+![image.png](https://github.com/user-attachments/assets/8a2064d9-ecb6-41e9-b4ea-9416a4d19c34 'image.png')
 
 # Paso 4: Visualización y Dashboarding (BI)
-##
+
+# 1. Para ello, se usó la Opción A: Power BI (Conectando a tu API)
+
+Esta opción es la mejor porque usa tu código de PythonAnywhere como fuente.
+
+1. Copia tu URL pública de datos: https://AngelaMartinezRivera.pythonanywhere.com/api/unidades
+2. En Power BI Desktop:
+- Haz clic en Obtener datos (Get Data).
+- Selecciona la opción API Web.
+- Pega tu URL de PythonAnywhere.
+
+![image.png](https://github.com/user-attachments/assets/a714801c-5d69-4e17-9fd4-e7e1f455ae1e 'image.png')
+
+![image.png](https://github.com/user-attachments/assets/263dbea3-199c-438f-8974-684358d9f16f 'image.png')
+
+![image.png](https://github.com/user-attachments/assets/e7eb4327-2039-436c-a294-313788cab160 'image.png')
+
+# 2. Diseñar tu Dashboard
+
+Busca en la esquina inferior derecha un botón verde que dice **Crear un informe**. Al darle clic, Power BI te llevará al lienzo en blanco.
+
+# Resultado:
+
