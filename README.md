@@ -546,7 +546,7 @@ Esta opción es la mejor porque usa tu código de PythonAnywhere como fuente.
 
 # 2. Diseñar el Dashboard
 
-Busca en la esquina inferior derecha un botón verde que dice **Crear un informe**. Al darle clic, Power BI te llevará al lienzo en blanco.
+Busca en la esquina inferior derecha un botón verde que dice **Crear un informe**. Al darle clic, Power BI te llevará al lienzo en blanco. Después, empiezas a diseñar tu dashboard dependiendo del objetivo de lo que quieras mostrar.
 
 ## Resultado:
 ![image.png](https://github.com/user-attachments/assets/30d0e6ed-be62-402d-8413-bca00570e111 'image.png')
