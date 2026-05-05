@@ -526,7 +526,7 @@ Para probar su funcionamiento, ejecute el código utilizando el menú de Endpoin
 
 # Paso 4: Visualización y Dashboarding (BI)
 
-## 1. Para ello, se usó la Opción A: Power BI
+## 1. Se usó la Opción A: Power BI
 
 Esta opción es la mejor porque usa tu código de PythonAnywhere como fuente.
 
@@ -542,7 +542,7 @@ Esta opción es la mejor porque usa tu código de PythonAnywhere como fuente.
 
 ![image.png](https://github.com/user-attachments/assets/e7eb4327-2039-436c-a294-313788cab160 'image.png')
 
-# 2. Diseñar tu Dashboard
+# 2. Diseñar el Dashboard
 
 Busca en la esquina inferior derecha un botón verde que dice **Crear un informe**. Al darle clic, Power BI te llevará al lienzo en blanco.
 
