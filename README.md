@@ -1,3 +1,5 @@
+Nombre: Angela Guadalupe Martínez Rivera
+
 # Práctica Integradora (Examen): Arquitectura Cloud para BI
 
 **Herramientas a utilizar:**
