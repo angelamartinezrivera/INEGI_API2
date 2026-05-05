@@ -2,13 +2,6 @@
 
 # Práctica Integradora (Examen): Arquitectura Cloud para BI
 
-**Herramientas a utilizar:**
-- **Base de Datos:** Supabase (PostgreSQL).
-- **Backend/API:** Python (Flask o FastAPI).
-- **Hosting:** PythonAnywhere.
-- **Visualización (BI):** Tableau, Power BI o Looker Studio.
-- **Validación de API:** Postman.
-
 # Paso 1: Migración a la Nube (Supabase)
 
 En primer lugar, se procede a importar el archivo de Excel previamente convertido a formato CSV mediante la interfaz de Supabase. Todo el contenido se almacenará inicialmente en una sola tabla base, la cual servirá como punto de partida para el diseño de la base de datos.
